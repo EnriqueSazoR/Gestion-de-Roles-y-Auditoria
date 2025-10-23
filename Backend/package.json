@@ -1,0 +1,26 @@
+{
+  "name": "gestionusuarios",
+  "version": "0.0.1",
+  "description": "este proyecto almacena cada accion dentro de una tabla auditoria",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "author": "Luis Sazo",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.9.1",
+    "prisma": "6.18.0",
+    "rimraf": "6.0.1",
+    "ts-node-dev": "2.0.0",
+    "tsx": "4.20.6"
+  },
+  "dependencies": {
+    "@prisma/client": "6.18.0",
+    "dotenv": "17.2.3",
+    "express": "5.1.0",
+    "typescript": "5.9.3"
+  }
+}
