@@ -5,8 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -15,8 +14,26 @@ datasource db {
 }
 
 
-// Modelo de prueba para probar conexión
-model user {
-  id Int @id
-  nombre String @unique
+// Modelo usuario
+model usuario {
+  id            Int     @id @default(autoincrement())
+  nombreUsuario String  @unique
+  email         String  @unique
+  password      String  
+  estado        Estado  @default(Activo)
+  idRol         Int
+
+  rol rol @relation(fields: [idRol], references: [id])
+}
+
+// Modelo rol 
+model rol {
+  id           Int  @id @default(autoincrement())
+  nombreRol    String @unique
+  usuarios usuario[]
+}
+
+enum Estado {
+  Activo
+  Inactivo
 }

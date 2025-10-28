@@ -1,4 +1,5 @@
 import express from 'express';
+import AuthRutas from './Routes/AuthRoutes.ts'
 import type { Response, Request } from 'express';
 
 
@@ -7,10 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-// Ruta de prueba
-app.get('/', (req:Request, res:Response) => {
-    res.json({mensaje : "Bienvenido"})
-})
+app.use('/Auth', AuthRutas)
 
 export default app;
 
