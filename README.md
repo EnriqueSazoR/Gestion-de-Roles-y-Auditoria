@@ -46,7 +46,7 @@ El objetivo del proyecto es ofrecer un entorno seguro y administrable donde se p
 | Módulo                | Descripción                                                     |
 | ----------------------| --------------------------------------------------------------- |
 | **Usuarios**          | CRUD completo con autenticación y estado activo/inactivo        |
-| **Roles**             | Gestión de roles (creación, asignación, actualización)          |
+| **Roles**             | Gestión de roles (asignación a cada usuario)                    |
 | **Auditoría**         | Registro automático de todas las acciones en `AuditLogs`        |
 | **Autenticación**     | Tokens JWT y middleware de validación                           |
 | **Frontend Angular**  | Interfaz para login y panel de administración de usuarios/roles |
