@@ -1,7 +1,7 @@
 import { body, validationResult } from "express-validator";
 import type { Request, Response, NextFunction } from "express";
 
-export const validarDatos = [
+export const validarDatosRegistro = [
     body("email")
         .isEmail()
         .withMessage("El correo debe tener un formato valido [@gmail, @outlook, et]"),
@@ -24,7 +24,22 @@ export const validarDatos = [
     (req: Request, res: Response, next: NextFunction) => {
         const errores = validationResult(req);
         if (!errores.isEmpty()) {
-            return res.status(400).json({ errores: errores.array() });
+            return res.status(400).json(errores.array());
+        }
+        next();
+    },
+
+];
+
+export const validarDatosLogin = [
+    body("email")
+        .isEmail()
+        .withMessage("El correo debe tener un formato valido [@gmail, @outlook, et]"),
+    
+    (req: Request, res: Response, next: NextFunction) => {
+        const errores = validationResult(req);
+        if (!errores.isEmpty()) {
+           return res.status(400).json(errores.array());     
         }
         next();
     },

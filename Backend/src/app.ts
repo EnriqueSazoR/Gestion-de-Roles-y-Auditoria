@@ -1,6 +1,6 @@
 import express from 'express';
 import AuthRutas from './Routes/AuthRoutes.ts'
-import type { Response, Request } from 'express';
+
 
 
 const app = express();

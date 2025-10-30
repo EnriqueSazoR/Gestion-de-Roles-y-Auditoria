@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import type { Usuario } from '../Interface/ususario.interface.ts';
 
 const SaltRounds: number = 10;
 
@@ -9,3 +10,6 @@ export const hashPassword = async ( password: string): Promise<string> => {
 
 
 // Comparar Hash con la base de datos
+export const hashCompare = async ( password : string, hash : string ): Promise<boolean> => {
+    return await bcrypt.compare(password, hash)
+}
